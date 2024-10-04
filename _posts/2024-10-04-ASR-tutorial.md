@@ -25,47 +25,73 @@ This tutorial isn't meant to be an in-depth explanation on how to train a ML mod
 The same process applies to an ASR model. The audio waves are passed in to the encoder, encoded into numbers using complicated math, then decoded into text. Over a lot of training, the encoder and decoder are able to communicate such that the vectors of numbers correspond accurately with the words being said, and thus, the transcription of the audio is output. While there are some complications mentioned above, the more comprehensive the training data is, the better the model will be.
 
 ### Picking a Model using HuggingFace
-Training any sort of Machine Learning model from scratch can be very costly and time-intensive, especially those working with audio. Luckily enough, many people have already created highly accurate models that can be found on HuggingFace. According to their website, HuggingFace is a "collaborative platform and community that helps users build, train, and deploy machine learning (ML) models”. On their website, you can find pre-built ML models and datasets that can be deployed very quickly and easily as I will show. For this example, we will be using the Whisper Large Turbo ASR model from OpenAI, the same company that built ChatGPT
-
-###### Heading 6
+Training any sort of Machine Learning model from scratch can be very costly and time-intensive, especially those working with audio. Luckily enough, many people have already created highly accurate models that can be found on HuggingFace. According to their website, HuggingFace is a "collaborative platform and community that helps users build, train, and deploy machine learning (ML) models”. On their website, you can find pre-built ML models and datasets that can be deployed very quickly and easily as I will show. For this example, we will be using the Whisper Large Turbo ASR model from OpenAI, the same company that built ChatGPT.
 
 <blockquote>Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum. Nulla vitae elit libero, a pharetra augue. Curabitur blandit tempus porttitor. Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum.</blockquote>
 
 Nullam quis risus eget urna mollis ornare vel eu leo. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
 
-## Unordered List
-* List Item
-* Longer List Item
-  * Nested List Item
-  * Nested Item
-* List Item
-
-## Ordered List
-1. List Item
-2. Longer List Item
-    1. Nested OL Item
-    2. Another Nested Item
-3. List Item
-
-## Definition List
-<dl>
-  <dt>Coffee</dt>
-  <dd>Black hot drink</dd>
-  <dt>Milk</dt>
-  <dd>White cold drink</dd>
-</dl>
-
 Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas faucibus mollis interdum. Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
 
-## Code Snippet
+### ASR on your own
+Now, the moment we've all been waiting for, I will show you how to utilize an ASR model and transcribe your own audio files. I will show Python code that can be used to accomplish this and can be run on any machine utilizing Google Colab, a free way to use Python without any additional downloads.
+
+#### Installing the Correct Packages
+For this model, the "torch", "transformers", and "accelerate" libraries from HuggingFace will be used. Again, all of this code can be run in a brand new Google Colab notebook with no additional downloads.
 
 {%- highlight python -%}
-def print_hi(name):
-  print("Hi" + name)
-print_hi('Tom')
-#=> prints 'Hi, Tom'.
+!pip install --upgrade pip
+!pip install --upgrade transformers  accelerate
+#=> installs required libraries
 {%- endhighlight -%}
 
+#### Importing the Model
+With the libraries installed, you can now import the model from HuggingFace using:
+
+{%- highlight python -%}
+import torch
+from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
+from datasets import load_dataset
+
+
+device = "cuda:0" if torch.cuda.is_available() else "cpu"
+torch_dtype = torch.float16 if torch.cuda.is_available() else torch.float32
+
+model_id = "openai/whisper-large-v3-turbo"
+
+model = AutoModelForSpeechSeq2Seq.from_pretrained(
+    model_id, torch_dtype=torch_dtype, low_cpu_mem_usage=True, use_safetensors=True
+)
+model.to(device)
+
+processor = AutoProcessor.from_pretrained(model_id)
+{%- endhighlight -%}
+
+The specifics of this code are not super important, but what should be noted is that we are using the "openai/whisper-large-v3-turbo" model. That line can be changed to be any other ASR model on the HuggingFace website and this will still work.
+
+#### Creating the Pipeline
+Now, all that's needed is creating a pipeline.
+
+{%- highlight python -%}
+pipe = pipeline(
+    "automatic-speech-recognition",
+    model=model,
+    tokenizer=processor.tokenizer,
+    feature_extractor=processor.feature_extractor,
+    torch_dtype=torch_dtype,
+    device=device,
+)
+{%- endhighlight -%}
+
+This pipeline allows us to call the function with our audio file and obtain the transcription.
+
+{%- highlight python -%}
+result = pipe("example_audio.mp3")
+result
+#=> Will give the corresponding text to what was said in the audio
+{%- endhighlight -%}
+
+It's as simple as that! Now, you have access to a powerful model trained on millions of examples with millions of parameters that can transcribe any audio for you. Incorporating this into a personal project, app, or website is very straightforward.
 
 ## Figure with Caption
 
