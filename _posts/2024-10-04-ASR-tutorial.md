@@ -7,13 +7,19 @@ description: A brief tutorial on how to leverage Machine Learning and ASR to tra
 
 <p class="intro"><span class="dropcap">A</span>udio is becoming more and more prevalent in the world or technology. With all the new inventions such as Siri, Alexa, or other home devices, as well as transcripts of customer service calls, dictated notes, and real-time language translation, being able to work with audio and transcribing it is very important. In this blog post, I will talk about why working with audio is important, some difficulties that may arise when working with it, some basic techniques, and finally, provide a tutorial for you to be able to transcribe your own audio files.</p>
 
-# Heading 1
+## Why Audio?
+Data is the new buzz word in the technology world and has been for a while. Many companies think the more data that can be gathered, the better. With this push for new data and new insights, data is out there in modalities, or specific types of data, that haven't been explored as deeply. Being able to work with audio, video, and other modalities instead of just numerical or text data is the way of the future and will drive insights not previously possible to be made with traditional methods.
 
-## Heading 2
+## Problems with Audio
+Computers and machine learning models are able to work with numerical and text data fairly well. Forecasts can be made, text analyses can be run, and that is what has made text and numbers so important for companies. However, the technology to work with audio and video, especially when it comes to machine learning, has grown exponentially over the past couple of years, and as AI models get bigger and bigger, the need to be able to handle audio, images, and video is just that much more important. For Automatic Speech Recognition (ASR) specifically, the challenge becomes training a ML model to be able to accept audio files or waves as input and output the corresponding text. Numbers and words are fairly constant when compared to audio. Examples of variations in audio could be:
+* Different speakers
+* Accents
+* Pauses or punctuation in the audio that may not correspond to exact words
+* Background Noise
+All of these inconsistencies can make training an ASR model very difficult.
 
-### Heading 3
+## Basics of Training an ASR Model
 
-#### Heading 4
 
 ##### Heading 5
 
