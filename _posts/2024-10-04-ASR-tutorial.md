@@ -5,7 +5,7 @@ date:   2024-10-04
 description: A brief tutorial on how to leverage Machine Learning and ASR to transcribe audio files.
 ---
 
-<p class="intro"><span class="dropcap">C</span>urabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur.</p>
+<p class="intro"><span class="dropcap">A</span>udio is becoming more and more prevalent in the world or technology. With all the new inventions such as Siri, Alexa, or other home devices, as well as transcripts of customer service calls, dictated notes, and real-time language translation, being able to work with audio and transcribing it is very important. In this blog post, I will talk about why working with audio is important, some difficulties that may arise when working with it, some basic techniques, and finally, provide a tutorial for you to be able to transcribe your own audio files.</p>
 
 # Heading 1
 
