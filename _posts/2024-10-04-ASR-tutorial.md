@@ -30,10 +30,10 @@ The same process applies to an ASR model. The audio waves are passed in to the e
 </figure>
 
 ### Picking a Model using HuggingFace
-Training any sort of Machine Learning model from scratch can be very costly and time-intensive, especially those working with audio. Luckily enough, many people have already created highly accurate models that can be found on HuggingFace. According to their website, HuggingFace is a "collaborative platform and community that helps users build, train, and deploy machine learning (ML) models”. On their website, you can find pre-built ML models and datasets that can be deployed very quickly and easily as I will show. For this example, we will be using the Whisper Large Turbo ASR model from OpenAI, the same company that built ChatGPT.
+Training any sort of Machine Learning model from scratch can be very costly and time-intensive, especially those working with audio. Luckily enough, many people have already created highly accurate models that can be found on [HuggingFace](https://huggingface.co/). According to their website, HuggingFace is a "collaborative platform and community that helps users build, train, and deploy machine learning (ML) models”. On their website, you can find pre-built ML models and datasets that can be deployed very quickly and easily as I will show. For this example, we will be using the [Whisper Large Turbo ASR](https://huggingface.co/openai/whisper-large-v3-turbo) model from OpenAI, the same company that built ChatGPT.
 
 ### ASR on your own
-Now, the moment we've all been waiting for, I will show you how to utilize an ASR model and transcribe your own audio files. I will show Python code that can be used to accomplish this and can be run on any machine utilizing Google Colab, a free way to use Python without any additional downloads.
+Now, the moment we've all been waiting for, I will show you how to utilize an ASR model and transcribe your own audio files. The Python code can be run on any machine utilizing Google Colab, a free way to use Python without any additional downloads. In addition, this code, along with more complicated use cases if you would like to go deeper, can be found at the [model's website](https://huggingface.co/openai/whisper-large-v3-turbo).
 
 #### Installing the Correct Packages
 For this model, the "torch", "transformers", and "accelerate" libraries from HuggingFace will be used. Again, all of this code can be run in a brand new Google Colab notebook with no additional downloads.
@@ -92,10 +92,12 @@ result
 
 It's as simple as that! Now, you have access to a powerful model trained on millions of examples with millions of parameters that can transcribe any audio for you. Incorporating this into a personal project, app, or website is very straightforward.
 
-{%- highlight html -%}
-<figure>
-	{% raw %}<img src="{{site.url}}/{{site.baseurl}}/assets/img/touring.jpg" alt="">{% endraw %}
-	<figcaption>Figure 1. - This is an example figcaption</figcaption>
-</figure>
-{%- endhighlight -%}
+### Conclusion
+What we went over:
+* Importance of audio
+* Why audio is hard to work with
+* Basic overview of training a model
+* HuggingFace overview
+* Creating your own ASR Pipeline
 
+A great resource for learning more about working with ASR and audio is [this course](https://huggingface.co/learn/audio-course/en/chapter0/introduction) on audio by HuggingFace. It is made for the beginner to intermediate level and will teach more in-depth about machine learning, utilizing audio, the transformer encoders and decoders, and other audial tasks that can be done with machine learning. In addition, following the tutorial on this post will give you a great baseline to leverage ASR for your own projects. Try it out to kickstart your audio machine learning journey!
