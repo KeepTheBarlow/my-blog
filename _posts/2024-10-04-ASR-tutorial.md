@@ -5,7 +5,7 @@ date:   2024-10-04
 description: A brief tutorial on how to leverage Machine Learning and ASR to transcribe audio files.
 ---
 
-<p class="intro"><span class="dropcap">A</span>udio is becoming more and more prevalent in the world or technology. With all the new inventions such as Siri, Alexa, or other home devices, as well as transcripts of customer service calls, dictated notes, and real-time language translation, being able to work with audio and transcribing it is very important. In this blog post, I will talk about why working with audio is important, some difficulties that may arise when working with it, some basic techniques, and finally, provide a tutorial for you to be able to transcribe your own audio files.</p>
+<p class="intro"><span class="dropcap">A</span>udio is becoming more and more prevalent in the world of technology. With all the new inventions such as Siri, Alexa, or other home devices, being able to transcribe audio is a key task in their inner workings. For transcripts of customer service calls, dictated notes, and real-time language translation, being able to work with audio and transcribing it is very important to be able to understand as well as perform data collection and inference. In this blog post, I will talk about why working with audio is important, some difficulties that may arise when working with it, some basic techniques, and finally, provide a tutorial for you to be able to transcribe your own audio files.</p>
 
 ### Why Audio?
 Data is the new buzz word in the technology world and has been for a while. Many companies think the more data that can be gathered, the better. With this push for new data and new insights, data is out there in modalities, or specific types of data, that haven't been explored as deeply. Being able to work with audio, video, and other modalities instead of just numerical or text data is the way of the future and will drive insights not previously possible to be made with traditional methods.
@@ -22,13 +22,18 @@ All of these inconsistencies can make training an ASR model very difficult.
 ### Basics of Training an ASR Model
 This tutorial isn't meant to be an in-depth explanation on how to train an ML model from scratch. There are much better examples and tutorials out there. However, I will go over the basics just so everybody is on the same level. Take, for example, an ML model that summarizes text (meaning the input is some text block and the output is the summary of the inputted text). The inner workings of the model cannot work with the text directly, so the words are passed into a "transformer encoder" that gives a representation of the words as a vector of numbers using math beyond the scope of this tutorial. The vector of numbers then is passed through the "transformer decoder" that takes the various vectors and hopefully prints out a summary of the text.
 
+<figure>
+	<img src="https://dataheroes.ai/wp-content/uploads/2023/04/post-2378-01.png" alt=""> 
+	<figcaption>Figure 1. - Basic ML Model Training</figcaption>
+</figure>
+
 At the beginning, the weights or parameters of the encoder and decoder are randomized, so the vector of numbers is more or less random and the output summary is more or less gibberish. That gibberish is compared to a human-given summary of the text, measured to see how close it is (using some sort of metric like Mean Squared Error), then based off that metric, the parameters of the encoder and decoder are updated. Over hundreds of thousands or even millions of examples, the model will slowly learn until its output is very similar to the human-written summaries.
 
 The same process applies to an ASR model. The audio waves are passed in to the encoder, encoded into numbers using complicated math, then decoded into text. Over a lot of training, the encoder and decoder are able to communicate such that the vectors of numbers correspond accurately with the words being said, and thus, the transcription of the audio is output. While there are some complications mentioned above, the more comprehensive the training data is, the better the model will be.
 
 <figure>
 	<img src="https://huggingface.co/datasets/huggingface-course/audio-course-images/resolve/main/asr_diagram.png" alt=""> 
-	<figcaption>Figure 1. - Visual ASR Model</figcaption>
+	<figcaption>Figure 2. - Visual ASR Model</figcaption>
 </figure>
 
 ### Picking a Model using HuggingFace
