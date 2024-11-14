@@ -21,6 +21,47 @@ In this case, the data and statistics were scraped from [Sports Reference](https
 
 ### Collecting the Data
 
+While all of the statistics we are looking for are right in the website and ready to be scraped, it is important to understand the basics behind what is actually happening within the code. We will be using BeautifulSoup to scrape our desired statistics, and their documentation can be found [here](https://www.crummy.com/software/BeautifulSoup/bs4/doc/). On the page we want to scrape, there are two tables. One is for Men's College Basketball and the other is for Women's. In this specific analysis, we are looking at just men's statistics, so taking advantage of the BeautifulSoup package, we grab the first table.
+
+{%- highlight python -%}
+url_teams = 'https://www.sports-reference.com/cbb/schools/#all_NCAAM_schools'
+r_teams = requests.get(url_teams)
+
+soup_teams = BeautifulSoup(r_teams.text)
+table = soup_teams.find('table', id="NCAAM_schools")
+#=> grabs the table specifically for NCAAM.
+{%- endhighlight -%}
+
+Then, we want to pull out just the text from the table. Many team names and statistics have hyperlinks, which we want to avoid.
+
+{%- highlight python -%}
+#We start with this code to pull out the header titles for each column
+header_row = table.find('thead').find_all('tr')[0]
+headers = []
+for title in header_row.find_all('th'):
+    headers.append(title['data-stat'])
+headers = headers[1:]
+
+#Collect all the rows in the table
+rows = table.find('tbody').find_all('tr')
+
+table_data = []
+
+for row in rows:
+    cells = row.find_all('td')
+    row_data = []
+    
+    #This for loop adds just the text of the row into row_data
+    for cell in cells:
+        row_data.append(cell.text.strip())
+    #Add the row data to our whole table
+    table_data.append(row_data)
+
+#Now we can create a dataframe with our text we have scraped
+df_teams = pd.DataFrame(table_data, columns=headers)
+#=> prints 'Hi, Tom'.
+{%- endhighlight -%}
+
 #### Heading 4
 
 ##### Heading 5
