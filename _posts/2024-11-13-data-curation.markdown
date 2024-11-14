@@ -7,17 +7,18 @@ description: Exploring what makes winners winners in college basketball, and why
 
 <p class="intro"><span class="dropcap">C</span>ollege Basketball is one of the most thrilling sports to watch. Every school has a rabid student section who pack their arena night in and night out to make as much noise as possible. It seems like on any given night, upsets are bound to happen with teams you've never even heard of taking down perennial powerhouses. But that begs the question: What makes these teams perennial powerhouses? Why is there this supposed upper echelon of teams each year that seems like it rarely changes? As an avid college basketball fan myself, I wanted to explore two specific questions. What are the key components of being a winning team in college basketball, and is there really an upper tier of teams that never really changes? This intro to exploratory data analysis will help answer those questions.</p>
 
-
-
-# Heading 1
-
-## Heading 2
-
 ### Ethical Scraping Practices
 
 Data is necessary for everyone from players to general managers if they want to draw conclusions about how to win. While available almost everywhere, you have to be careful and mindful about how you go about collecting data. When scraping data or using APIs, it is important to understand the rules and regulations in place from where you are scraping or pulling data. Pay close attention to the terms of whatever site you are using to collect your data.
 
 In this case, the data and statistics were scraped from [Sports Reference](https://www.sports-reference.com/cbb/schools/#all_NCAAM_schools), an online repository for sports statistics. It is free to scrape and available to the public, with the only caveat being a citation necessary. You can find that citation at the bottom of the page. Ultimately, the most important idea to keep in mind is be familiar with the guidelines your specific website is requesting.
+
+<figure>
+	<img src="https://a.espncdn.com/photo/2024/0225/r1295805_1296x729_16-9.jpg" alt=""> 
+	<figcaption>Figure 1. - Fans storming the court. Source - ESPN.com</figcaption>
+</figure>
+
+Before we begin collecting the data, it's important you understand the magnitude of this question. This is an image of fans storming the court after beating a higher ranked rival team. Clearly, there is passion and emotion coming from everyone there. From the players to the coaches to the fans, everyone wants to win and have these magical moments. The question is how to continue winning?
 
 ### Collecting the Data
 
@@ -59,12 +60,37 @@ for row in rows:
 
 #Now we can create a dataframe with our text we have scraped
 df_teams = pd.DataFrame(table_data, columns=headers)
-#=> prints 'Hi, Tom'.
 {%- endhighlight -%}
 
-#### Heading 4
+With just this code, you already have a dataframe you can work with in Python! It's as easy as that. This specific table had just data on each team's all time statistics, so we also scrape [this page](https://www.sports-reference.com/cbb/seasons/men/2024-school-stats.html) for data specific to this past season. A more in depth look at scraping then merging the two dataframes can be found at [my repository](https://github.com/KeepTheBarlow/Data-Curation-Project).
 
-##### Heading 5
+### A Look at the Data
+
+After having scraped our two desired tables and merged them together, we have a dataframe consisting of each team with their all time statistics, as well as statistics from this most recent year. For those of you who aren't basketball fans, I will provide a quick breakdown of what the more confusing columns in the dataframe represent.
+
+* SRS = "Simple Ranking System". It's a very basic metric to rank teams
+* SOS = "Strength of Schedule". Measures how difficult a team's schedule is.
+* FG = "Field Goal". Any shot that isn't a free throw in basketball.
+* 3P = "Three Pointer". Specifically a three point shot.
+* FT = "Free Throw". An undefended shot taken after a foul.
+* Reb = "Rebound". Grabbing the ball after a missed shot.
+
+There are 361 teams (rows) and 45 columns (the team name then 44 statistics about the team). Some interesting summary statistics can be found using
+
+{%- highlight python -%}
+#Create a table of mean values of each numeric column
+mean_values = complete_df.mean(numeric_only=True)
+
+mean_df = mean_values.to_frame().T
+mean_df
+#=> prints a one row table of the mean of each column
+{%- endhighlight -%}
+
+Of all the means, what stands out to me the most are the average number of Final Fours reached by each team (0.93), the average Field Goal Percentage in 2023 (0.445), and the average Three Point Percentage in 2023 (0.339). We see that the average team hasn't even made it to one Final Four, and we can see that the average shot in college basketball over the course of a whole season is actually more likely to miss.
+
+### Answering our Questions
+
+Now we have our data
 
 ###### Heading 6
 
@@ -119,7 +145,7 @@ print_hi('Tom')
 
 <figure>
 	<img src="https://a.espncdn.com/photo/2024/0225/r1295805_1296x729_16-9.jpg" alt=""> 
-	<figcaption>Figure 1. - Fans storming the court</figcaption>
+	<figcaption>Figure 1. - Fans storming the court. Source - ESPN.com</figcaption>
 </figure>
 
 
