@@ -18,7 +18,7 @@ In this case, the data and statistics were scraped from [Sports Reference](https
 	<figcaption>Fans storming the court. Source - ESPN.com</figcaption>
 </figure>
 
-Before we begin collecting the data, it's important you understand the magnitude of this question. This is an image of fans storming the court after beating a higher ranked rival team. Clearly, there is passion and emotion coming from everyone there. From the players to the coaches to the fans, everyone wants to win and have these magical moments. The question is how to continue winning?
+Before we begin collecting the data, it's important you understand the magnitude of this question. This is an image of fans storming the court after beating a higher ranked rival team. Clearly, there is passion and emotion coming from everyone there. From the players to the coaches to the fans, everyone wants to win and have these magical moments. The question is, how can our favorite team continue winning?
 
 ### Collecting the Data
 
@@ -86,29 +86,110 @@ mean_df
 #=> prints a one row table of the mean of each column
 {%- endhighlight -%}
 
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Years</th>
+      <th>AllTimeGames</th>
+      <th>AllTimeWins</th>
+      <th>AllTimeLosses</th>
+      <th>AllTimeWinPct</th>
+      <th>AllTimeSRS</th>
+      <th>AllTimeSOS</th>
+      <th>FinalPoll</th>
+      <th>RegSeasonConfChampCount</th>
+      <th>ConfChampPostCount</th>
+      <th>NCAAAppCount</th>
+      <th>NCAAFinalFourCount</th>
+      <th>NCAAChampCount</th>
+      <th>Games2023</th>
+      <th>Wins2023</th>
+      <th>Losses2023</th>
+      <th>WinPct2023</th>
+      <th>SRS2023</th>
+      <th>SOS2023</th>
+      <th>ConfWins2023</th>
+      <th>ConfLosses2023</th>
+      <th>HomeWins2023</th>
+      <th>HomeLosses2023</th>
+      <th>AwayWins2023</th>
+      <th>AwayLosses2023</th>
+      <th>Points2023</th>
+      <th>OppPoints2023</th>
+      <th>MinutesPlayed2023</th>
+      <th>FGM2023</th>
+      <th>FGA2023</th>
+      <th>FGPct2023</th>
+      <th>3PM2023</th>
+      <th>3PA2023</th>
+      <th>3PPct2023</th>
+      <th>FTM2023</th>
+      <th>FTA2023</th>
+      <th>FTPct2023</th>
+      <th>OffReb2023</th>
+      <th>TotReb2023</th>
+      <th>Assists2023</th>
+      <th>Steals2023</th>
+      <th>Blocks2023</th>
+      <th>Turnovers2023</th>
+      <th>Fouls2023</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>71.844875</td>
+      <td>1862.415512</td>
+      <td>998.537396</td>
+      <td>863.781163</td>
+      <td>0.515413</td>
+      <td>-2.307036</td>
+      <td>-1.202271</td>
+      <td>4.440443</td>
+      <td>8.085873</td>
+      <td>4.00554</td>
+      <td>9.941828</td>
+      <td>0.930748</td>
+      <td>0.232687</td>
+      <td>33.063712</td>
+      <td>17.243767</td>
+      <td>15.819945</td>
+      <td>0.515729</td>
+      <td>-0.558006</td>
+      <td>-0.277008</td>
+      <td>9.036111</td>
+      <td>9.019444</td>
+      <td>10.376731</td>
+      <td>4.844875</td>
+      <td>4.842105</td>
+      <td>8.961219</td>
+      <td>2433.952909</td>
+      <td>2379.958449</td>
+      <td>1333.6759</td>
+      <td>865.279778</td>
+      <td>1941.257618</td>
+      <td>0.445152</td>
+      <td>246.825485</td>
+      <td>725.33795</td>
+      <td>0.338787</td>
+      <td>456.551247</td>
+      <td>635.562327</td>
+      <td>0.717695</td>
+      <td>341.166205</td>
+      <td>1173.714681</td>
+      <td>442.105263</td>
+      <td>219.121884</td>
+      <td>113.66482</td>
+      <td>389.939058</td>
+      <td>557.811634</td>
+    </tr>
+  </tbody>
+</table>
+
 Of all the means, what stands out to me the most are the average number of Final Fours reached by each team (0.93), the average Field Goal Percentage in 2023 (0.445), and the average Three Point Percentage in 2023 (0.339). We see that the average team hasn't even made it to one Final Four, and we can see that the average shot in college basketball over the course of a whole season is actually more likely to miss.
 
 ### Answering our Questions
 
-Now that we have our data and some interesting summary statistics, the questions that inspired this data collection can be answered. To begin, we can look at what variables inpact winning the most in a given season. We filter the dataframe to include just the columns we want, then we can create a correlation heatmap as follows:
-
-{%- highlight python -%}
-#Create a correlation heatmap using only 2023 data
-columns_2023 = [
-    'Games2023', 'WinPct2023','SRS2023', 'SOS2023', 'Points2023', 'OppPoints2023',
-    'FGPct2023','3PPct2023', 'FTPct2023', 'OffReb2023','TotReb2023', 'Assists2023',
-    'Steals2023', 'Blocks2023', 'Turnovers2023', 'Fouls2023'
-]
-
-season_df_2023 = complete_df[columns_2023]
-
-correlation_matrix = season_df_2023.corr()
-
-plt.figure(figsize=(16, 12))
-sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', center=0)
-plt.title("Correlation Heatmap for 2023 Season Stats")
-plt.show()
-{%- endhighlight -%}
+Now that we have our data and some interesting summary statistics, the questions that inspired this data collection can be answered. To begin, we can look at what variables inpact winning the most in a given season. Creating a correlation heatmap can tell us about which variables are closely related.
 
 <figure>
     <img src="{{ '/assets/img/corr_heatmap.png' | relative_url }}" alt="">
@@ -119,19 +200,6 @@ Obviously, winning percentage is highly correlated with variables like points or
 
 To answer our other question of if there is an elite tier in college basketball, we can look at the relationship between number of all time NCAA tournament appearances (the biggest tournament in college basketball) and winning percentage in 2023.
 
-{%- highlight python -%}
-#Plot of Tournament Appearances and Win %
-plt.figure(figsize=(10, 6))
-sns.regplot(data=complete_df, x='NCAAAppCount', y='WinPct2023')
-
-plt.xlabel("Number of NCAA Tournament Appearances All Time")
-plt.ylabel("Win Percentage (2023)")
-plt.title("Relationship between Tournament Appearances and Win % (2023)")
-
-plt.show()
-#=> creates a scatterplot comparing Tournament Appearances and Win %
-{%- endhighlight -%}
-
 <figure>
     <img src="{{ '/assets/img/ncaa_apps.png' | relative_url }}" alt="">
     <figcaption>Figure 1. - Scatterplot of the relationship between tournament appearances and win % (2023)</figcaption>
@@ -141,7 +209,9 @@ According to the scatterplot, there is a obvious trend showing that the total nu
 
 ### Conclusion
 
-Overall, we have seen how to ethically scrape data from a website into a dataframe. We have seen how to run basic EDA on that dataframe. The conclusions made were that offensive statistics tend to have a higher correlation with winning percentage than do defensive statistics and that there does appear to be an upper echelon of teams that consistently win games and make it to the biggest stage in college basketball. For a deeper look into how exactly the tables were scraped and merged, as well as other EDA plots we didn't have the time to get into, feel free to check out [my repository](https://github.com/KeepTheBarlow/Data-Curation-Project). Try webscraping out yourself on a topic that sounds interesting to you and watch how the data can come to life!
+Overall, we have seen how to ethically scrape data from a website into a dataframe. In addition, we have seen how exploratory data analysis can help us answer our questions we have about the data. The conclusions made were that offensive statistics tend to have a higher correlation with winning percentage than do defensive statistics and that there does appear to be an upper echelon of teams that consistently win games and make it to the biggest stage in college basketball. As you watch your favorite team this year (Go BYU!), pay close attention to how exactly they are winning games!
+
+For a deeper look into more specifically how the tables were scraped and merged, as well as other EDA plots and their code we didn't have the time to get into, feel free to check out [my repository](https://github.com/KeepTheBarlow/Data-Curation-Project). Try webscraping out yourself on a topic that sounds interesting to you and watch how the data can come to life!
 
 Citation:
 Sports Reference LLC. College Basketball at Sports-Reference.com - College Basketball Statistics and History. http://www.sports-reference.com/cbb/. (11/13/2024)
