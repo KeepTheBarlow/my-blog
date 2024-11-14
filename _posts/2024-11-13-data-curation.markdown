@@ -89,98 +89,16 @@ mean_df
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th>Years</th>
-      <th>AllTimeGames</th>
-      <th>AllTimeWins</th>
-      <th>AllTimeLosses</th>
-      <th>AllTimeWinPct</th>
-      <th>AllTimeSRS</th>
-      <th>AllTimeSOS</th>
-      <th>FinalPoll</th>
-      <th>RegSeasonConfChampCount</th>
-      <th>ConfChampPostCount</th>
-      <th>NCAAAppCount</th>
       <th>NCAAFinalFourCount</th>
-      <th>NCAAChampCount</th>
-      <th>Games2023</th>
-      <th>Wins2023</th>
-      <th>Losses2023</th>
-      <th>WinPct2023</th>
-      <th>SRS2023</th>
-      <th>SOS2023</th>
-      <th>ConfWins2023</th>
-      <th>ConfLosses2023</th>
-      <th>HomeWins2023</th>
-      <th>HomeLosses2023</th>
-      <th>AwayWins2023</th>
-      <th>AwayLosses2023</th>
-      <th>Points2023</th>
-      <th>OppPoints2023</th>
-      <th>MinutesPlayed2023</th>
-      <th>FGM2023</th>
-      <th>FGA2023</th>
       <th>FGPct2023</th>
-      <th>3PM2023</th>
-      <th>3PA2023</th>
       <th>3PPct2023</th>
-      <th>FTM2023</th>
-      <th>FTA2023</th>
-      <th>FTPct2023</th>
-      <th>OffReb2023</th>
-      <th>TotReb2023</th>
-      <th>Assists2023</th>
-      <th>Steals2023</th>
-      <th>Blocks2023</th>
-      <th>Turnovers2023</th>
-      <th>Fouls2023</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>71.844875</td>
-      <td>1862.415512</td>
-      <td>998.537396</td>
-      <td>863.781163</td>
-      <td>0.515413</td>
-      <td>-2.307036</td>
-      <td>-1.202271</td>
-      <td>4.440443</td>
-      <td>8.085873</td>
-      <td>4.00554</td>
-      <td>9.941828</td>
       <td>0.930748</td>
-      <td>0.232687</td>
-      <td>33.063712</td>
-      <td>17.243767</td>
-      <td>15.819945</td>
-      <td>0.515729</td>
-      <td>-0.558006</td>
-      <td>-0.277008</td>
-      <td>9.036111</td>
-      <td>9.019444</td>
-      <td>10.376731</td>
-      <td>4.844875</td>
-      <td>4.842105</td>
-      <td>8.961219</td>
-      <td>2433.952909</td>
-      <td>2379.958449</td>
-      <td>1333.6759</td>
-      <td>865.279778</td>
-      <td>1941.257618</td>
       <td>0.445152</td>
-      <td>246.825485</td>
-      <td>725.33795</td>
       <td>0.338787</td>
-      <td>456.551247</td>
-      <td>635.562327</td>
-      <td>0.717695</td>
-      <td>341.166205</td>
-      <td>1173.714681</td>
-      <td>442.105263</td>
-      <td>219.121884</td>
-      <td>113.66482</td>
-      <td>389.939058</td>
-      <td>557.811634</td>
     </tr>
   </tbody>
 </table>
