@@ -15,7 +15,7 @@ In this case, the data and statistics were scraped from [Sports Reference](https
 
 <figure>
 	<img src="https://a.espncdn.com/photo/2024/0225/r1295805_1296x729_16-9.jpg" alt=""> 
-	<figcaption>Figure 1. - Fans storming the court. Source - ESPN.com</figcaption>
+	<figcaption>Fans storming the court. Source - ESPN.com</figcaption>
 </figure>
 
 Before we begin collecting the data, it's important you understand the magnitude of this question. This is an image of fans storming the court after beating a higher ranked rival team. Clearly, there is passion and emotion coming from everyone there. From the players to the coaches to the fans, everyone wants to win and have these magical moments. The question is how to continue winning?
@@ -90,7 +90,31 @@ Of all the means, what stands out to me the most are the average number of Final
 
 ### Answering our Questions
 
-Now we have our data
+Now that we have our data and some interesting summary statistics, the questions that inspired this data collection can be answered. To begin, we can look at what variables inpact winning the most in a given season. We filter the dataframe to include just the columns we want, then we can create a correlation heatmap as follows:
+
+{%- highlight python -%}
+#Create a correlation heatmap using only 2023 data
+columns_2023 = [
+    'Games2023', 'WinPct2023','SRS2023', 'SOS2023', 'Points2023', 'OppPoints2023',
+    'FGPct2023','3PPct2023', 'FTPct2023', 'OffReb2023','TotReb2023', 'Assists2023',
+    'Steals2023', 'Blocks2023', 'Turnovers2023', 'Fouls2023'
+]
+
+season_df_2023 = complete_df[columns_2023]
+
+correlation_matrix = season_df_2023.corr()
+
+plt.figure(figsize=(16, 12))
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', center=0)
+plt.title("Correlation Heatmap for 2023 Season Stats")
+plt.show()
+{%- endhighlight -%}
+
+<figure>
+    <img src="{{ '/assets/images/corr_heatmap.png' | relative_url }}" alt="">
+    <figcaption>Figure 1. - Correlation Heatmap of 2023 Season Stats</figcaption>
+</figure>
+
 
 ###### Heading 6
 
