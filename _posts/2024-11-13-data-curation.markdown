@@ -111,7 +111,7 @@ plt.show()
 {%- endhighlight -%}
 
 <figure>
-    <img src="{{ '/assets/images/corr_heatmap.png' | relative_url }}" alt="">
+    <img src="{{ '/assets/img/corr_heatmap.png' | relative_url }}" alt="">
     <figcaption>Figure 1. - Correlation Heatmap of 2023 Season Stats</figcaption>
 </figure>
 
