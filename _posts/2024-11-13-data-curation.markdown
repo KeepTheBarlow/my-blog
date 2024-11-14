@@ -115,68 +115,34 @@ plt.show()
     <figcaption>Figure 1. - Correlation Heatmap of 2023 Season Stats</figcaption>
 </figure>
 
+Obviously, winning percentage is highly correlated with variables like points or SRS (the simple ranking system). However, what's interesting to note is that there is a much stronger correlation with rebounds and assists (0.62 and 0.67) than with steals and blocks (0.35 and 0.35). There is a common adage in the basketball world that "defense wins championships", but this data seems to suggest that offensive statistics play a bigger role in winning than do defensive statistics.
 
-###### Heading 6
-
-<blockquote>Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum. Nulla vitae elit libero, a pharetra augue. Curabitur blandit tempus porttitor. Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum.</blockquote>
-
-Nullam quis risus eget urna mollis ornare vel eu leo. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-
-## Unordered List
-* List Item
-* Longer List Item
-  * Nested List Item
-  * Nested Item
-* List Item
-
-## Ordered List
-1. List Item
-2. Longer List Item
-    1. Nested OL Item
-    2. Another Nested Item
-3. List Item
-
-## Definition List
-<dl>
-  <dt>Coffee</dt>
-  <dd>Black hot drink</dd>
-  <dt>Milk</dt>
-  <dd>White cold drink</dd>
-</dl>
-
-Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas faucibus mollis interdum. Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-
-## Table
-
-| Syntax      | Description |
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
-| Header      | Title       |
-| Paragraph   | Text        |
-
-## Code Snippet
+To answer our other question of if there is an elite tier in college basketball, we can look at the relationship between number of all time NCAA tournament appearances (the biggest tournament in college basketball) and winning percentage in 2023.
 
 {%- highlight python -%}
-def print_hi(name):
-  print("Hi" + name)
-print_hi('Tom')
-#=> prints 'Hi, Tom'.
+#Plot of Tournament Appearances and Win %
+plt.figure(figsize=(10, 6))
+sns.regplot(data=complete_df, x='NCAAAppCount', y='WinPct2023')
+
+plt.xlabel("Number of NCAA Tournament Appearances All Time")
+plt.ylabel("Win Percentage (2023)")
+plt.title("Relationship between Tournament Appearances and Win % (2023)")
+
+plt.show()
+#=> creates a scatterplot comparing Tournament Appearances and Win %
 {%- endhighlight -%}
 
-
-## Figure with Caption
-
 <figure>
-	<img src="https://a.espncdn.com/photo/2024/0225/r1295805_1296x729_16-9.jpg" alt=""> 
-	<figcaption>Figure 1. - Fans storming the court. Source - ESPN.com</figcaption>
+    <img src="{{ '/assets/img/ncaa_apps.png' | relative_url }}" alt="">
+    <figcaption>Figure 1. - Scatterplot of the relationship between tournament appearances and win % (2023)</figcaption>
 </figure>
 
+According to the scatterplot, there is a obvious trend showing that the total number of tournament appearances all time is positively related with win percentage, even in one given season. This would suggest there is in fact an elite tier in college basketball, and even if the specific teams may vary slightly from year to year, you can always expect the traditionally "great" teams to win many games.
 
-{%- highlight html -%}
-<figure>
-	{% raw %}<img src="{{site.url}}/{{site.baseurl}}/assets/img/touring.jpg" alt="">{% endraw %}
-	<figcaption>Figure 1. - This is an example figcaption</figcaption>
-</figure>
-{%- endhighlight -%}
+### Conclusion
+
+Overall, we have seen how to ethically scrape data from a website into a dataframe. We have seen how to run basic EDA on that dataframe. The conclusions made were that offensive statistics tend to have a higher correlation with winning percentage than do defensive statistics and that there does appear to be an upper echelon of teams that consistently win games and make it to the biggest stage in college basketball. For a deeper look into how exactly the tables were scraped and merged, as well as other EDA plots we didn't have the time to get into, feel free to check out [my repository](https://github.com/KeepTheBarlow/Data-Curation-Project). Try webscraping out yourself on a topic that sounds interesting to you and watch how the data can come to life!
+
+Citation:
+Sports Reference LLC. College Basketball at Sports-Reference.com - College Basketball Statistics and History. http://www.sports-reference.com/cbb/. (11/13/2024)
 
