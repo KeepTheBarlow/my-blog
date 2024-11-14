@@ -86,19 +86,19 @@ mean_df
 #=> prints a one row table of the mean of each column
 {%- endhighlight -%}
 
-<table border="1" class="dataframe">
+<table border="1" class="dataframe" style="width:100%; border-collapse:collapse; margin:20px 0;">
   <thead>
-    <tr style="text-align: right;">
-      <th>NCAAFinalFourCount</th>
-      <th>FGPct2023</th>
-      <th>3PPct2023</th>
+    <tr style="text-align:center;">
+      <th style="padding:8px; border:1px solid #ddd; text-align:center;">NCAAFinalFourCount</th>
+      <th style="padding:8px; border:1px solid #ddd; text-align:center;">FGPct2023</th>
+      <th style="padding:8px; border:1px solid #ddd; text-align:center;">3PPct2023</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>0.930748</td>
-      <td>0.445152</td>
-      <td>0.338787</td>
+      <td style="padding:8px; border:1px solid #ddd; text-align:center;">0.930748</td>
+      <td style="padding:8px; border:1px solid #ddd; text-align:center;">0.445152</td>
+      <td style="padding:8px; border:1px solid #ddd; text-align:center;">0.338787</td>
     </tr>
   </tbody>
 </table>
