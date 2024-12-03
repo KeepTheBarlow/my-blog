@@ -103,7 +103,9 @@ mean_df
   </tbody>
 </table>
 
-Of all the means, what stands out to me the most are the average number of Final Fours reached by each team (0.93), the average Field Goal Percentage in 2023 (0.445), and the average Three Point Percentage in 2023 (0.339). We see that the average team hasn't even made it to one Final Four, and we can see that the average shot in college basketball over the course of a whole season is actually more likely to miss.
+Of all the means, what stands out to me the most are the average number of Final Fours reached by each team (0.93), the average Field Goal Percentage in 2023 (0.445), and the average Three Point Percentage in 2023 (0.339).
+
+We see that the average team hasn't even made it to one Final Four, and we can see that the average shot in college basketball over the course of a whole season is actually more likely to miss.
 
 ### Answering our Questions
 
