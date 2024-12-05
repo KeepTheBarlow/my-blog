@@ -40,73 +40,16 @@ The app includes:
 * Ability for you to create your own scatterplot
 * Other interesting graphs that couldn't be included in this post
 
-While using the app, all you have to do is select a team from the search area on the sidebar. This will pull up the summary statistics for your team, compare them with the top 10 all time winningest teams, and highlight them in a scatterplot for the 2023 season. The scatterplot itself allows you to select your own variables to find interesting conclusions for yourself and about a team of your choice. Ultimately, the purpose of the app is to allow any user to lose themselves in the joy of basketball statistics.
+#### Instructions
 
-#### Heading 4
+While using the app, all you have to do is select a team from the search area on the sidebar. This will pull up the summary statistics for your team, compare them with the top 10 all time winningest teams, and highlight them in a scatterplot for the 2023 season. The scatterplot itself allows you to select your own variables to find interesting conclusions for yourself and about a team of your choice. For example, you could select the team "Brigham Young", put assists on the X-axis, and winning percentage on the Y-axis. Now, you can see the relationship between assists and winning percentage across the entire NCAA with BYU highlighted in red. Ultimately, the purpose of the app is to allow any user to explore relationships they are curious about.
 
-##### Heading 5
+## Conclusion
 
-###### Heading 6
+Working with basketball data allows you to dip your feet into the energy and and fervor that accompanies NCAA basketball. Fanatical fans and passionate players do all they can to will their team to a victory. Interestingly enough, statistics are becoming a bigger and bigger part of that winning formula. Just from this basic data exploration, we have seen how offensive stats seem to impact winning more. In addition, we found the existience of an elite tier of teams that continue to win and make it to the NCAA tournament. The [Streamlit App](https://college-basketball-statistics.streamlit.app/) allows you to ask your own questions and make your own conclusions. Try the app out and see if you can find other conclusions in the data!
 
-<blockquote>Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum. Nulla vitae elit libero, a pharetra augue. Curabitur blandit tempus porttitor. Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum.</blockquote>
+[GitHub Repository](https://github.com/KeepTheBarlow/basketball-stats-app)
+[Streamlit App](https://college-basketball-statistics.streamlit.app/)
 
-Nullam quis risus eget urna mollis ornare vel eu leo. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-
-## Unordered List
-* List Item
-* Longer List Item
-  * Nested List Item
-  * Nested Item
-* List Item
-
-## Ordered List
-1. List Item
-2. Longer List Item
-    1. Nested OL Item
-    2. Another Nested Item
-3. List Item
-
-## Definition List
-<dl>
-  <dt>Coffee</dt>
-  <dd>Black hot drink</dd>
-  <dt>Milk</dt>
-  <dd>White cold drink</dd>
-</dl>
-
-Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas faucibus mollis interdum. Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-
-## Table
-
-| Syntax      | Description |
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
-| Header      | Title       |
-| Paragraph   | Text        |
-
-## Code Snippet
-
-{%- highlight python -%}
-def print_hi(name):
-  print("Hi" + name)
-print_hi('Tom')
-#=> prints 'Hi, Tom'.
-{%- endhighlight -%}
-
-
-## Figure with Caption
-
-<figure>
-	<img src="{{site.url}}/{{site.baseurl}}/assets/img/touring.jpg" alt=""> 
-	<figcaption>Figure 1. - This is an example figcaption</figcaption>
-</figure>
-
-
-{%- highlight html -%}
-<figure>
-	{% raw %}<img src="{{site.url}}/{{site.baseurl}}/assets/img/touring.jpg" alt="">{% endraw %}
-	<figcaption>Figure 1. - This is an example figcaption</figcaption>
-</figure>
-{%- endhighlight -%}
-
+Citation:
+Sports Reference LLC. College Basketball at Sports-Reference.com - College Basketball Statistics and History. [http://www.sports-reference.com/cbb/](http://www.sports-reference.com/cbb/). (11/13/2024)
