@@ -46,7 +46,7 @@ While using the app, all you have to do is select a team from the search area on
 
 ## Conclusion
 
-Working with basketball data allows you to dip your feet into the energy and and fervor that accompanies NCAA basketball. Fanatical fans and passionate players do all they can to will their team to a victory. Interestingly enough, statistics are becoming a bigger and bigger part of that winning formula. Just from this basic data exploration, we have seen how offensive stats seem to impact winning more. In addition, we found the existience of an elite tier of teams that continue to win and make it to the NCAA tournament. The [Streamlit App](https://college-basketball-statistics.streamlit.app/) allows you to ask your own questions and make your own conclusions. Try the app out and see if you can find other conclusions in the data!
+Working with basketball data allows you to dip your feet into the energy and fervor that accompanies NCAA basketball. Fanatical fans and passionate players do all they can to will their team to a victory. Interestingly enough, statistics are becoming a bigger and bigger part of that winning formula. Just from this basic data exploration, we have seen how offensive stats seem to impact winning more. In addition, we found the existence of an elite tier of teams that continue to win and make it to the NCAA tournament. The [Streamlit App](https://college-basketball-statistics.streamlit.app/) allows you to ask your own questions and make your own conclusions. Try the app out and see if you can find other conclusions in the data!
 
 [GitHub Repository](https://github.com/KeepTheBarlow/basketball-stats-app)
 [Streamlit App](https://college-basketball-statistics.streamlit.app/)
