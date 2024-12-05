@@ -5,7 +5,7 @@ date:   2024-12-04
 description: Introducing an app that will let you explore why winners win.
 ---
 
-<p class="intro"><span class="dropcap">C</span>urabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur.</p>
+<p class="intro"><span class="dropcap">C</span>ollege basketball captures the attention and imagination of millions every year, especially in March. Each team, along with hordes of their dedicated fans, will do most anything to increase their winning chances. Thousands of coaches, players, and fans across the country ask themselves how their team can win more games, so that was the question I set out to answer. In my [previous post](https://keepthebarlow.github.io/my-blog/blog/data-curation/), I showed how to scrape basketball statistics and some interesting features of the data. Here, we will dive deeper into the data and conclusions, as well as look at an app that will allow you to explore the data yourself. Ultimately, between this post and the app, we will be able to uncover some of the mystery behind winning teams in college basketball.</p>
 
 # Heading 1
 
