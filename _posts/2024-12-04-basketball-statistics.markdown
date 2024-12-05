@@ -29,7 +29,18 @@ For the all-time data, the relationship between NCAA tournament appearances (the
 
 Although this is just one season, we can clearly see a strong, positive relationship between tournament appearances and win percentage in 2023. The relationship tells us that the historically successful teams continue to win at a higher clip than the lower teams, suggesting a higher tier of teams. While there are some outliers, with some teams potentially having down years, the trend is positive. The old adage of "the rich get richer" seems to apply to college basketball, with the top recruits going to successful programs and making it harder for the smaller programs to break through.
 
-### Heading 3
+## Streamlit App
+
+The great thing about sports statistics are the multitude of insights and conclusions that can be drawn. Many different variables go into winning and it can be more complicated than just a heatmap or scatterplot. For this reason, I decided to make a [Streamlit App](https://college-basketball-statistics.streamlit.app/) that will allow you to explore the data and find your own conclusions.
+
+The app includes:
+* A team selector
+* Summary statistics for 2023 season and all-time
+* Comparison of selected team with all other teams
+* Ability for you to create your own scatterplot
+* Other interesting graphs that couldn't be included in this post
+
+While using the app, all you have to do is select a team from the search area on the sidebar. This will pull up the summary statistics for your team, compare them with the top 10 all time winningest teams, and highlight them in a scatterplot for the 2023 season. The scatterplot itself allows you to select your own variables to find interesting conclusions for yourself and about a team of your choice. Ultimately, the purpose of the app is to allow any user to lose themselves in the joy of basketball statistics.
 
 #### Heading 4
 
